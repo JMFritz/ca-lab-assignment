@@ -130,7 +130,6 @@ exports.handler = async message => {
   } catch (err) {
       console.log(err);
   }
-}
 };
 ```
 
