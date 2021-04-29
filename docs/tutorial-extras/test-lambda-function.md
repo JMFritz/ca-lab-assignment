@@ -11,14 +11,32 @@ Introduction to S3 API call (putObject) + function walkthrough.
 ======PutObjectFunction code description======
 
 ```js
-exports.handler = async (event) => {
-    // TODO implement
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify('Hello from Lambda!'),
+// Load AWS SDK and create a new S3 object
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+const bucketName = process.env.BUCKET_NAME; // Reference Lambda environment variable
+
+exports.handler = async message => {
+  try {
+    const r = Math.random().toString(36).substring(7);
+    const text = 'Sample Text';
+    const objectKey = 'Object-' + r;
+  
+    // Construct parameters for the putObject call
+    const params = {
+      Bucket: bucketName,
+      Body: text,
+      Key: objectKey,
     };
-    return response;
-};
+    
+    // Call putObject() + respond with success string
+    await s3.putObject(params).promise();
+    return objectKey + ' stored in ' + bucketName;
+    
+  } catch (err) {
+      console.log(err);
+  }
+}
 ```
 
 You will test the function to verify it works correctly in this Lab Step.
