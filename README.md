@@ -1,3 +1,9 @@
+## Live Site
+
+
+<a href="dwzcdmo9hk383.cloudfront.net" target="_blank">CA Lab Assignment Site</a>
+
+
 ## Directory Structure
 
 ```text
