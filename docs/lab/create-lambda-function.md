@@ -6,11 +6,7 @@ sidebar_position: 2
 
 ## Introduction
 
-AWS Lambda is ...
-
-- Create lambda function
-- Configure environment variables
-- Add code
+In this Lab step, you will create a new AWS Lambda function using the AWS Management Console.
 
 ## Instructions
 
@@ -40,7 +36,7 @@ exports.handler = async message => {
   } catch (err) {
       console.log(err);
   }
-}
+};
 ```
 
 1. In the AWS Management Console search bar, enter *Lambda*, and click the **Lambda** result under **Services**:
@@ -146,7 +142,9 @@ You will walk through this code in the following Lab Step.
 
 In this lab step, you created an AWS Lambda function that uses the Node.js runtime. You configured this function to take on a predefined execution role, allowing it to access a specific Amazon S3 bucket. Finally, you added the bucket name environment variable that your function references within the index.js handler.
 
-## Validation Checks
+## Checks
 
 **Created AWS Lambda Function**
 Check if the AWS Lambda function has been created.
+
+> **Note**: The source code for this check is located in the `CheckFunction.js` file.

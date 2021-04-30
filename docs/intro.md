@@ -2,34 +2,20 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Cloud Lab Developer Assignment
 
-Let's discover **Docusaurus in less than 5 minutes**.
+### Assignment Assumptions
 
-## Getting Started
+## Part 1
 
-Get started by **creating a new site**.
+### Lab Components
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+## Part 2
 
-## Generate a new site
+### Questions
 
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+1. Are there any lab steps/instructions you would recommend adding that you didn’t have time to implement?
+   
+2. Would you change anything about the style guide?
+   
+3. How did you consider the target audience?

@@ -6,11 +6,13 @@ sidebar_position: 3
 
 ## Introduction
 
-Introduction to S3 API call (putObject) + function walkthrough.
+In this Lab step, you will walkthrough the `PutObjectFunction` source code, invoke the function and verify your serverless function was successful.
 
-======PutObjectFunction code description======
+### Function Walkthrough
 
-```js
+The Lambda function you created in the previous lab performs a single AWS SDK call: `putObject()`. 
+
+```js {4,8-10,13-17,20}
 // Load AWS SDK and create a new S3 object
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
@@ -36,8 +38,16 @@ exports.handler = async message => {
   } catch (err) {
       console.log(err);
   }
-}
+};
 ```
+
+In the previous Lab step, you configured your Lambda function to reference the `BUCKET_NAME` environment variable that stored the name of the predefined S3 bucket.
+
+Within the function handler and directly below the `try` block are the variables used to construct the random S3 object and key to be written to the S3 bucket.
+
+Next, the SDK call parameters are defined with the bucket name and generated object text and key.
+
+Finally, the `putObject()` call is made. A message is returned to indicate the call is successful, or the function error is logged within the functions `catch` block.
 
 You will test the function to verify it works correctly in this Lab Step.
 ## Instructions
@@ -53,17 +63,15 @@ You will test the function to verify it works correctly in this Lab Step.
 
 The Lambda function in this lab is not responding to an event. You are invoking this function by running a test event using an empty JSON object.
 
-As mentioned previously, the PutObjectFunction will store the local `sample.txt` file into the S3 bucket. ==== CLEAN THIS PART UP. SHOULD THIS BE IN THE INTRODUCTION SECTION? ====
-
 1. Click **Create**.
 
-1. Click **Test** above the code editor to run the **PutObject** test you just created.
+2. Click **Test** above the code editor to run the **PutObject** test you just created.
 
 Within a few seconds you will see the Execution results tab load in the editor:
 
 ====SCREENSHOT OF EXECUTION=====
 
-You can see the "Object stored successfully" response near the top of execution results. 
+You can see the successful response near the top of execution results, indicating a new object with a random key was written to the S3 bucket. 
 
 To confirm the object was stored successfully:
 
@@ -76,13 +84,15 @@ You are placed in the Amazon S3 console.
 
 1. Under the list of S3 buckets, click the **s3bucket-97171** bucket.
 
-Confirm the `sample.txt` file has been successfully uploaded to the S3 bucket.
+Confirm the `Object-{random}` file has been successfully uploaded to the S3 bucket.
 
 ## Summary
 
-In this lab step, you stepped through the `PutObjectFunction` source code to review the AWS SDK call used to upload the sample text file to the S3 bucket. You configured a test event to serve as the function invocation trigger and successfully uploaded the `sample.txt` file to the lab's S3 bucket.
+In this lab step, you stepped through the `PutObjectFunction` source code to review the AWS SDK call used to upload the sample text file to the S3 bucket. You configured a test event to serve as the function invocation trigger and successfully uploaded the `Object-{random}` file to the lab's S3 bucket.
 
-## Validation Checks
+## Checks
 
 **Lambda Function Stored Object in S3 Bucket**
 Check if the AWS Lambda function has successfully stored the text file into the S3 Bucket
+
+> **Note**: The source code for this check is located in the `CheckBucket.js` file.
