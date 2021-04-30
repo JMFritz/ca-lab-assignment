@@ -2,12 +2,12 @@
 module.exports = {
   title: 'Cloud Academy Lab Submission',
   tagline: 'Jun Marcel Fritz',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://JMFritz.github.io',
+  baseUrl: '/ca-lab-assignment/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'JMFritz', // Usually your GitHub org/user name.
   projectName: 'ca-lab-assignment', // Usually your repo name.
   themeConfig: {
     colorMode: {
