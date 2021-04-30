@@ -1,14 +1,32 @@
-# Stackery Blank SAM Template
-
-This is a sample template for a serverless AWS Lambda application.
-
-Here is an overview of the files:
+## Directory Structure
 
 ```text
-.
-├── deployHooks/                       <-- Directory for storing deployment hooks
-├── .gitignore                         <-- Gitignore for Stackery
-├── .stackery-config.yaml              <-- Default CLI parameters for root directory
-├── README.md                          <-- This README file
-└── template.yaml                      <-- SAM infrastructure-as-code template
+ca-lab-assignment
+    ├── labs
+    ├── Lab-Components
+        ├── CheckBucket.js
+        ├── CheckFunction.js
+        ├── lab-template.yaml
+        └── PutObject.js
+    ├── README.md
+    └── template.yaml
 ```
+
+## Project Timeline
+
+**4/28**:
+- Receive Lab Assignment
+- Walkthrough steps in AWS Console
+- Document Lab steps
+- Scaffold Docusaurus site
+
+**4/29**:
+- Write function code
+- Deploy site (S3 + CloudFront) using Stackery/CloudFormation
+
+**4/30**:
+- Lab write-up
+- Formatting and testing
+- Console testing (IAM role/permissions, instruction validity, assessment function testing)
+- Add accurate console screenshots
+- Deploy updated site + submission
