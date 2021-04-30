@@ -100,7 +100,7 @@ In this Lab step, you will create a new AWS Lambda function using the AWS Manage
 
 1. Click **Deploy** directly above the code editor to save and deploy the Lambda function.
 
-![deploy-button](img/deploy-button.png)
+  ![deploy-button](img/deploy-button.png)
 
 ## Summary
 

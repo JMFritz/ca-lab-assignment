@@ -92,7 +92,7 @@ To confirm the object was stored successfully:
 
 ## Summary
 
-In this lab step, you stepped through the `PutObjectFunction` source code. You configured a test event to serve as the function invocation trigger and successfully uploaded an `Object-{random}` file to the lab's S3 bucket.
+In this lab step, you walked through the `PutObjectFunction` source code. You configured a test event to serve as the function invocation trigger and successfully uploaded an `Object-{random}` file to the lab's S3 bucket.
 
 For more hands-on lab with AWS Lambda and common serverless application components, check out the **<a href="https://cloudacademy.com/course/using-serverless-functions/creating-a-scheduled-event-with-aws-lambda/?context_resource=lp&context_id=25" target="_blank">Using Serverless Functions</a>** course on Cloud Academy or visit the **<a href="https://aws.amazon.com/serverless/" target="_blank">Serverless on AWS</a>** documentation.
 
