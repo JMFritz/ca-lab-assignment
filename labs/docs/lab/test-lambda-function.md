@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## Introduction
 
-In this Lab step, you will walkthrough the `PutObjectFunction` source code, invoke the function, and verify your serverless function can successfully write to the S3 bucket.
+In this Lab step, you will walk through the `PutObjectFunction` source code, invoke the function, and verify your serverless function can successfully write to the S3 bucket.
 
 ### Function Walkthrough
 
@@ -76,7 +76,7 @@ In this Lab step, you will walkthrough the `PutObjectFunction` source code, invo
 
   ![response](img/response.png)
 
-To confirm the object was stored successfully:
+To confirm the object has been uploaded successfully:
 
 5. In the AWS Management Console search bar, enter *S3*, and click the **S3** result under **Services**:
 
@@ -100,6 +100,7 @@ For more hands-on lab with AWS Lambda and common serverless application componen
 ## Checks
 
 **Lambda Function Stored Object in S3 Bucket**
+
 Check if the AWS Lambda function has successfully stored the text file into the S3 Bucket
 
 > **Note**: The source code for this check is located in the `CheckBucket.js` file.

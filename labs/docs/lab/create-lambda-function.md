@@ -51,11 +51,11 @@ In this Lab step, you will create a new AWS Lambda function using the AWS Manage
 
 5. On the Environment variables page, click **Add environment variable** and enter the following:
    - **Key**: *BUCKET_NAME*
-   - **Value**: *\<S3Bucket\>*
+   - **Value**: *{S3Bucket}*
 
-  > **Note:** Replace *\<S3Bucket\>* with the **S3Bucket** value from the left side of the lab page. (Ex. **xxxx-bucket-xxxx**)
+  > **Note:** Replace *{S3Bucket}* with the **S3Bucket** value from the left side of the lab page. (Ex. **xxxx-bucket-xxxx**)
 
-  ![env-vars](img/env-vars.png)
+  ![env-vars](img/env-var.png)
 
 2. Click **Save**.
 
@@ -112,6 +112,7 @@ To learn more about AWS Lambda functions and serverless computing, get started w
 ## Checks
 
 **Created AWS Lambda Function**
+
 Check if the AWS Lambda function has been created.
 
 > **Note**: The source code for this check is located in the `CheckFunction.js` file.
