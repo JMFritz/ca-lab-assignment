@@ -13,41 +13,41 @@ In this Lab step, you will walkthrough the `PutObjectFunction` source code, invo
   The Lambda function you created in the previous Lab step makes a single AWS SDK call: `putObject()`. 
 
   ```js {4,8-10,13-17,20}
-  // Load AWS SDK and create a new S3 object
-  const AWS = require('aws-sdk');
-  const s3 = new AWS.S3();
-  const bucketName = process.env.BUCKET_NAME; // Reference Lambda environment variable
-
-  exports.handler = async message => {
-    try {
-      const r = Math.random().toString(36).substring(7);
-      const text = 'Sample Text';
-      const objectKey = 'Object-' + r;
-    
-      // Construct parameters for the putObject call
-      const params = {
-        Bucket: bucketName,
-        Body: text,
-        Key: objectKey,
-      };
-      
-      // Call putObject() + respond with success string
-      await s3.putObject(params).promise();
-      return objectKey + ' stored in ' + bucketName;
-      
-    } catch (err) {
-        console.log(err);
-    }
-  };
+  1 // Load AWS SDK and create a new S3 object
+  2 const AWS = require('aws-sdk');
+  3 const s3 = new AWS.S3();
+  4 const bucketName = process.env.BUCKET_NAME; // Reference Lambda environment variable
+  5 
+  6 exports.handler = async message => {
+  7   try {
+  8     const r = Math.random().toString(36).substring(7);
+  9     const text = 'Sample Text';
+  10    const objectKey = 'Object-' + r;
+  11    
+  12    // Construct parameters for the putObject call
+  13    const params = {
+  14      Bucket: bucketName,
+  15      Body: text,
+  16      Key: objectKey,
+  17    };
+  18    
+  19    // Call putObject() + respond with success string
+  20    await s3.putObject(params).promise();
+  21    return objectKey + ' stored in ' + bucketName;
+  22    
+  23  } catch (err) {
+  24      console.log(err);
+  25  }
+  26};
   ```
 
-  In the previous Lab step, you configured your Lambda function to reference the `BUCKET_NAME` environment variable that stores the S3 bucket name.
+  **(4)**: In the previous Lab step, you configured your Lambda function to reference the `BUCKET_NAME` environment variable that stores the S3 bucket name.
 
-  Within the function handler and directly below the `try` block are the local variables. The first variable generates a random string which is concatenated with `Object-` to form unique object key.
+  **(8-10)**: Within the function handler and directly below the `try` block are the local variables. The first variable generates a random string which is concatenated with `Object-` to form unique object key. 
 
-  Next, the SDK call parameters are set using the bucket name environment variable, sample text, and object key.
+  **(13-17)**: Next, the SDK call parameters are set using the bucket name environment variable, sample text, and object key.
 
-  Finally, `putObject()` is called. A message is returned to indicate the call is successful, or the function error is logged in the function's `catch` block.
+  **(20)**: Finally, `putObject()` is called. A message is returned to indicate the call is successful, or the function error is logged in the function's `catch` block.
 
   You will test the function by invoking it in this Lab step.
   
