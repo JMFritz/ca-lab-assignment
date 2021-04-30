@@ -3,7 +3,7 @@ module.exports = {
   title: 'Cloud Academy Lab Submission',
   tagline: 'Jun Marcel Fritz',
   url: 'https://JMFritz.github.io',
-  baseUrl: '/ca-lab-assignment/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
