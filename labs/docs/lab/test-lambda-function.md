@@ -12,34 +12,34 @@ In this Lab step, you will walkthrough the `PutObjectFunction` source code, invo
 
 The Lambda function you created in the previous lab performs a single AWS SDK call: `putObject()`. 
 
-```js {4,8-10,13-17,20}
-// Load AWS SDK and create a new S3 object
-const AWS = require('aws-sdk');
-const s3 = new AWS.S3();
-const bucketName = process.env.BUCKET_NAME; // Reference Lambda environment variable
+  ```js {4,8-10,13-17,20}
+  // Load AWS SDK and create a new S3 object
+  const AWS = require('aws-sdk');
+  const s3 = new AWS.S3();
+  const bucketName = process.env.BUCKET_NAME; // Reference Lambda environment variable
 
-exports.handler = async message => {
-  try {
-    const r = Math.random().toString(36).substring(7);
-    const text = 'Sample Text';
-    const objectKey = 'Object-' + r;
-  
-    // Construct parameters for the putObject call
-    const params = {
-      Bucket: bucketName,
-      Body: text,
-      Key: objectKey,
-    };
+  exports.handler = async message => {
+    try {
+      const r = Math.random().toString(36).substring(7);
+      const text = 'Sample Text';
+      const objectKey = 'Object-' + r;
     
-    // Call putObject() + respond with success string
-    await s3.putObject(params).promise();
-    return objectKey + ' stored in ' + bucketName;
-    
-  } catch (err) {
-      console.log(err);
-  }
-};
-```
+      // Construct parameters for the putObject call
+      const params = {
+        Bucket: bucketName,
+        Body: text,
+        Key: objectKey,
+      };
+      
+      // Call putObject() + respond with success string
+      await s3.putObject(params).promise();
+      return objectKey + ' stored in ' + bucketName;
+      
+    } catch (err) {
+        console.log(err);
+    }
+  };
+  ```
 
 In the previous Lab step, you configured your Lambda function to reference the `BUCKET_NAME` environment variable that stored the name of the predefined S3 bucket.
 
@@ -56,35 +56,35 @@ You will test the function to verify it works correctly in this Lab Step.
 
 1. In the **Configure test event** form, enter the following values into the form:
 
-- **Event name**: *PutObject*
-- **Event body**: Delete the existing key-pair values and leave an empty set of curly braces `{}`. 
+     - **Event name**: *PutObject*
+     - **Event body**: Delete the existing key-pair values and leave an empty set of curly braces `{}`. 
 
-====SCREENSHOT OF TEST EVENT=====
+     ====SCREENSHOT OF TEST EVENT=====
 
-The Lambda function in this lab is not responding to an event. You are invoking this function by running a test event using an empty JSON object.
+     The Lambda function in this lab is not responding to an event. You are invoking this function by running a test event using an empty JSON object.
 
 1. Click **Create**.
 
-2. Click **Test** above the code editor to run the **PutObject** test you just created.
+1. Click **Test** above the code editor to run the **PutObject** test you just created.
 
-Within a few seconds you will see the Execution results tab load in the editor:
+  Within a few seconds you will see the Execution results tab load in the editor:
 
-====SCREENSHOT OF EXECUTION=====
+  ====SCREENSHOT OF EXECUTION=====
 
-You can see the successful response near the top of execution results, indicating a new object with a random key was written to the S3 bucket. 
+  You can see the successful response near the top of execution results, indicating a new object with a random key was written to the S3 bucket. 
 
-To confirm the object was stored successfully:
+  To confirm the object was stored successfully:
 
 1. In the AWS Management Console search bar, enter *S3*, and click the **S3** result under **Services**:
 
-<!-- ![s3-service](img/s3-service.png) -->
-====SCREENSHOT OF S3 SEARCH=====
+  <!-- ![s3-service](img/s3-service.png) -->
+  ====SCREENSHOT OF S3 SEARCH=====
 
-You are placed in the Amazon S3 console.
+  You are placed in the Amazon S3 console.
 
 1. Under the list of S3 buckets, click the **s3bucket-97171** bucket.
 
-Confirm the `Object-{random}` file has been successfully uploaded to the S3 bucket.
+  Confirm the `Object-{random}` file has been successfully uploaded to the S3 bucket.
 
 ## Summary
 
