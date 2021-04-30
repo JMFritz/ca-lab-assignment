@@ -10,6 +10,9 @@ module.exports = {
   organizationName: 'JMFritz', // Usually your GitHub org/user name.
   projectName: 'ca-lab-assignment', // Usually your repo name.
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/vsLight'),
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,

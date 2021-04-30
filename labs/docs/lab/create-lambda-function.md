@@ -27,48 +27,45 @@ In this Lab step, you will create a new AWS Lambda function using the AWS Manage
 1. Under Basic information, enter the following values:
    - **Function name**: Enter *PutObjectFunction*
    - **Runtime**: Ensure **Node.js 14.x** is selected
-   - **Permissions**: Click Change default execution role
+   - **Permissions**: Click **Change default execution role**
      - **Execution role**: Select **Use an existing role**
-     - **Existing role**: Select the role **Lambda-Lab-Role**
+     - **Existing role**: Select the **xxxx-PutObjectExecRole-xxxx** from the dropdown menu
 
-   ![basic-info](img/basic-info.png)
-
-   ![lambda-role](img/lambda-role.png)
+   ![function-config](img/function-config.png)
 
 1. To finish creating your AWS Lambda function, scroll to the bottom of the form and click **Create function**.
 
-  <!-- ![create-function](img/create-function.png) -->
+  ![create-function](img/create-function.png)
 
   You are taken to the function's detail page:
 
-  <!-- ![create-function-form](img/create-function-form.png) -->
   ![function-created](img/function-created.png)
 
-1. Click the **Configuration** panel below the Function overview to update the function configurations.
+2. Click the **Configuration** panel below the Function overview to update the function configurations.
 
-1. On the navigation panel to the left, click **Environment variables**.
+3. On the navigation panel to the left, click **Environment variables**.
 
-1. Click **Edit**.
+4. Click **Edit**.
 
   ![edit-env-vars](img/edit-env-vars.png)
 
-  <!-- ![edit](img/edit.png) -->
-
-1. On the Environment variables page, click **Add environment variable** and enter the following:
+5. On the Environment variables page, click **Add environment variable** and enter the following:
    - **Key**: *BUCKET_NAME*
-   - **Value**: *s3bucket-97171*
+   - **Value**: *\<S3Bucket\>*
+
+  > **Note:** Replace *\<S3Bucket\>* with the **S3Bucket** value from the left side of the lab page. (Ex. **xxxx-bucket-xxxx**)
 
   ![env-vars](img/env-vars.png)
 
-1. Click **Save**.
+2. Click **Save**.
 
-  You are taken back to the function's detail page.
+  You are taken back to the function detail page.
 
-1. Ensure the **Code** panel is selected to view the current function code source.
+1. Click the **Code** panel to view the current function source code.
+   
+2. Double-click **index.js** to open the file in the code editor.
 
-1. Double-click the **index.js** file to open the file in the code editor.
-
-1. Delete the existing code and replace it with the following code snippet:
+3. Delete the existing code and replace it with the following code snippet:
 
   ```js
   // Load AWS SDK and create a new S3 object
@@ -99,18 +96,18 @@ In this Lab step, you will create a new AWS Lambda function using the AWS Manage
   };
   ```
 
-  You will walk through this code in the following Lab Step.
+  You will walk through this code in the following Lab step.
 
 1. Click **Deploy** directly above the code editor to save and deploy the Lambda function.
 
-<!-- ![deploy](img/deploy.png) -->
-
-
-<!-- ![](img/.png) -->
+![deploy-button](img/deploy-button.png)
 
 ## Summary
 
-In this lab step, you created an AWS Lambda function that uses the Node.js runtime. You configured this function to take on a predefined execution role, allowing it to access a specific Amazon S3 bucket. Finally, you added the bucket name environment variable that your function references within the index.js handler.
+In this lab step, you created an AWS Lambda function that uses the Node.js runtime. You configured this function to take on a predefined execution role, allowing it to access a specific Amazon S3 bucket. Finally, you added the bucket name environment variable that your function will reference within the index.js handler.
+
+To learn more about AWS Lambda functions and serverless computing, get started with the **<a href="https://cloudacademy.com/learning-paths/getting-started-serverless-computing-25/" target="_blank">Serverless Computing on AWS Learning Path</a>** or check out the **<a href="https://docs.aws.amazon.com/lambda/index.html" target="_blank">AWS Lambda documentation</a>**.
+
 
 ## Checks
 
