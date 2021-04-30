@@ -1,33 +1,14 @@
-# Website
+# Stackery Blank SAM Template
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This is a sample template for a serverless AWS Lambda application.
 
-## Installation
+Here is an overview of the files:
 
-```console
-yarn install
+```text
+.
+├── deployHooks/                       <-- Directory for storing deployment hooks
+├── .gitignore                         <-- Gitignore for Stackery
+├── .stackery-config.yaml              <-- Default CLI parameters for root directory
+├── README.md                          <-- This README file
+└── template.yaml                      <-- SAM infrastructure-as-code template
 ```
-
-## Local Development
-
-```console
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```console
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
